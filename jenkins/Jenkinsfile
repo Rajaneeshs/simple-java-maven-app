@@ -22,7 +22,9 @@ pipeline {
             }
         }
         stage('Archive'){
-        archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+            steps{
+            archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+            }
         }
         stage('Deliver') {
             steps {
